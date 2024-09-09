@@ -53,6 +53,9 @@ span.logo {
   padding: 0 10px;
   margin: 0 auto;
 }
+.content img {
+  max-width: 100%;
+}
 .showcase {
   display: flex;
   flex-direction: column;
