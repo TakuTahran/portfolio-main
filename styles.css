@@ -137,7 +137,7 @@ h1.name {
 }
 .case-study {
   display: block;
-  margin: 134px auto 0;
+  margin: 134px auto 4rem;
   width: 100%;
   max-width: 633px;
 }
