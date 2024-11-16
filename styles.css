@@ -73,6 +73,11 @@ h1.name {
   text-decoration: none;
   line-height: 1;
 }
+.btn:hover {
+  background: #FFF;
+  color: #111111;
+  border: 1PX solid #fff;  
+}
 /* image slider */
 .hero-image-slider .image.taku {
   background-image: url(./imgs/taku.jpg);
@@ -84,6 +89,12 @@ h1.name {
 }
 .hero-image-slider .image.valnet {
   background-image: url(/imgs/GMS.jpg);
+  height: 100vh;
+  background-position: right;
+  background-size: cover;  
+}
+.hero-image-slider .image.alpha {
+  background-image: url(/imgs/alpha.png);
   height: 100vh;
   background-position: right;
   background-size: cover;  
@@ -123,4 +134,76 @@ h1.name {
 }
 .slick-prev:before, .slick-next:before {
   font-family: 'RBCText';
+}
+.case-study {
+  display: block;
+  margin: 134px auto 0;
+  width: 100%;
+  max-width: 633px;
+}
+
+.two-btn-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+/* General Table Styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 16px;
+  text-align: left;
+  background-color: #121212; /* Dark background */
+  color: #ffffff; /* White text for contrast */
+}
+
+/* Table Header */
+thead th {
+  background-color: #1f1f1f; /* Slightly lighter than the table body */
+  color: #f5f5f5; /* Slight contrast for the header */
+  padding: 10px;
+  border-bottom: 2px solid #444444; /* Subtle separation */
+  font-weight: bold;
+}
+
+/* Table Body */
+tbody td {
+  padding: 10px;
+  border-bottom: 1px solid #2e2e2e; /* Row separation */
+}
+
+/* Zebra Striping */
+tbody tr {
+  background-color: #1f1e1e; /* Lighter background for odd rows */
+}
+tbody tr:nth-child(odd) {
+  background-color: #1a1a1a; /* Lighter background for odd rows */
+}
+
+/* Hover Effect */
+tbody tr:hover {
+  background-color: #333333; /* Slight highlight on hover */
+}
+
+
+/* a reset */
+
+a {
+  text-decoration: none; /* Removes underline */
+  color: inherit; /* Makes the link inherit text color from its parent */
+}
+
+a:visited {
+  color: inherit; /* Ensures visited links inherit text color */
+}
+
+a:hover,
+a:focus {
+  text-decoration: none; /* Prevent underline on hover/focus */
+  color: inherit; /* Keeps color consistent */
+}
+
+a:active {
+  text-decoration: none; /* No underline on active state */
+  color: inherit;
 }

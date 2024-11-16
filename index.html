@@ -34,6 +34,7 @@
               <div class="content">
                 <h1 class="name">Tahran Chowdhury</h1>      
                 <h2>Montreal, Canada / +10 Years Experience / Designer @Valnet</h2>  
+                <a class="btn" href="/about.html">About Me</a>
               </div>
             </div>
           </div>
@@ -50,9 +51,26 @@
                 </p>
                 <p class="location">📍 Montréal, QC 🇨🇦</p>
                 <a class="btn" href="https://valnetinc.com/" target="_blank">valnetinc.com</a>
+                <a class="btn" href="/gms.html">Case Study</a>
               </div>
             </div>
           </div>
+
+          <div class="hero">
+            <div class="text">
+              <span class="logo">MA</span>
+              <div class="content job">
+                <h1 class="company">MatterAlpha</h1>
+                <p>Freelance Designer</p>
+                <p class="date">Present</p>
+                <p class="company-desc">
+                  MatterAlpha is a one stop shop for all the happenings of the home automation
+                </p>
+                <p class="location">📍 Remote</p>
+                <a class="btn" href="/matteralpha.html">Case Study</a>
+              </div>
+            </div>
+          </div>          
       
           <div class="hero">
             <div class="text">
@@ -81,7 +99,7 @@
                   LinkNow® is a web design and online marketing company based in Montreal. We’re a diverse group of designers, marketers, writers, and customer experience agents who are passionate about the impact great digital marketing can have on small businesses.
                 </p>
                 <p class="location">📍 Brossard, QC 🇨🇦</p>
-                <a class="btn" href="https://linknow.com/home/" target="_blank">linknow.com/</a>
+                <a class="btn" href="https://linknow.com/home/" target="_blank">linknow.com</a>
               </div>
             </div>
           </div>          
@@ -91,98 +109,17 @@
         <div class="hero-image-slider">
           <div class="image taku" style="background-color: #ddd;"> 
           </div>
-          <div class="image valnet" style="background-color: #ccc;"> <!-- Placeholder for Valnet image -->
+          <div class="image valnet" style="background-color: #ccc;">
+          </div>          
+          <div class="image alpha" style="background-color: #ccc;">
           </div>
-          <div class="image ubiweb" style="background-color: #ccc;"> <!-- Placeholder for Valnet image -->
+          <div class="image ubiweb" style="background-color: #ccc;">
           </div>
-          <div class="image lnm" style="background-color: #bbb;"> <!-- Placeholder for Ubiweb image -->
-          </div>
-        </div>
-      </div>
-      
-
-
-
-      <div class="content">
-
-        <hr / style="margin-bottom:2rem;">
-        <h2>Case Studies</h2>
-        <div class="showcase">
-          <a href="gms.html">
-            <div class="item">
-              <img src="imgs/image-1.png" />
-              <div class="info">
-                <h3>UX/UI / Development</h3>
-                <h3>Match Detail Pages</h3>
-              </div>
-            </div>
-          </a>
-          <a href="matteralpha.html">
-            <div class="item">
-              <img src="imgs/image-2.png" />
-              <div class="info">
-                <h3>UX/UI / Branding</h3>
-                <h3>Match Detail Pages</h3>
-              </div>
-            </div>
-          </a>
-        </div>
-        <hr />
-        <div class="about">
-          <h2>About</h2>
-          <div class="item">
-            <img class="about-image" src="imgs/taku.png" />
-          </div>
-          <div class="item">
-            <h2>Who am I?</h2>
-            <p>
-              I’m Taku, a UX/UI Designer and Front-End Developer based in Canada
-              with 10 years of experience. I specialize in helping businesses
-              build innovative digital products, guiding the process from UX
-              research and UI design to prototyping and integration.
-            </p>
-            <h2>Design Philosophy</h2>
-            <p>These are a set of principles that I adhere by as a Desginer</p>
-            <div class="philosophy">
-              <ol>
-                <li>
-                  <h3>Be wrong</h3>
-                  <p>
-                    It took me a long time to learn this, but as a designer, my
-                    first iteration should be wrong. I should be open to
-                    feedback and criticism to find the best solution.
-                  </p>
-                </li>
-                <li>
-                  <h3>Understand the process</h3>
-                  <p>
-                    Good design is not just beautiful but also functional. I
-                    always try to understand what is the purpose of my design,
-                    who is this for, and what problems does this solve.
-                  </p>
-                </li>
-                <li>
-                  <h3>Keep it stupid simple</h3>
-                  <p>
-                    Anyone who’s worked in sales will be familiar with this
-                    phrase. It is also applicable to design. It’s important to
-                    make sure the work I do add’s value, not complexity.
-                  </p>
-                </li>
-                <li>
-                  <h3>Have fun</h3>
-                  <p>
-                    I know this sounds extremely corny, but it’s easy to forget
-                    to have fun. After dozen’s of iterations the task may start
-                    to feel heavy. I try to take each piece off feedback as a
-                    challenge to do something better.
-                  </p>
-                </li>
-              </ol>
-            </div>
+          <div class="image lnm" style="background-color: #bbb;">
           </div>
         </div>
       </div>
+
     </main>
     <!-- jQuery (required by Slick) -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -210,7 +147,36 @@
         });
       });
     </script>
-    
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        function checkScreenSize() {
+          if (window.innerWidth < 1024) { // Adjust as needed
+            // Clear the existing content
+            document.body.innerHTML = '';
+
+            // Create a new warning message
+            const warningMessage = document.createElement('div');
+            warningMessage.style.cssText = `
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              height: 100vh;
+              text-align: center;
+              background-color: #000;
+              color: #fff;
+              font-family: Arial, sans-serif;
+            `;
+            warningMessage.innerHTML ="Are you really going to hire someone while browsing on your phone? I think not. <br><br>Come back on a desktop, and let's get serious.";
+            document.body.appendChild(warningMessage);
+          }
+        }
+
+        checkScreenSize();
+
+        // Re-check on window resize
+        window.addEventListener('resize', checkScreenSize);
+      });
+    </script>    
     
   </body>
 </html>
