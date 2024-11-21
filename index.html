@@ -24,7 +24,8 @@
   </head>
   <body>
     <main>
-
+      <div id="custom-cursor"></div>
+      <div id="particle-container"></div>   
       <div class="hero-slider-wrapper">
         <!-- Text Slider -->
         <div class="hero-text-slider">
@@ -39,7 +40,7 @@
             </div>
           </div>
       
-          <div class="hero">
+          <div class="hero alt">
             <div class="text">
               <span class="logo">V</span>
               <div class="content job">
@@ -72,7 +73,7 @@
             </div>
           </div>          
       
-          <div class="hero">
+          <div class="hero alt">
             <div class="text">
               <span class="logo">U</span>
               <div class="content job">
@@ -126,26 +127,88 @@
     <!-- Slick JS -->
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.min.js"></script>
     <script>
-      $(document).ready(function(){
+      $(document).ready(function () {
+        // Initialize Slick Carousel
         $('.hero-text-slider').slick({
           slidesToShow: 1,
           slidesToScroll: 1,
-          dots: false,             // Optional: show dots on the image slider
+          dots: false,
           arrows: true,
-          fade: false,             // Smooth fading for text transitions
-          vertical: true,
-          asNavFor: '.hero-image-slider' // Link to image slider
+          fade: true,
+          speed: 1000, // Adjust slide transition speed
+          easing: 'ease-in-out', // Smoother animation
+          asNavFor: '.hero-image-slider',
         });
-    
+
         $('.hero-image-slider').slick({
           slidesToShow: 1,
           slidesToScroll: 1,
-          arrows: false,          // No arrows for the image slider
-          dots: false,             // Optional: show dots on the image slider
+          arrows: false,
+          dots: false,
           vertical: true,
-          asNavFor: '.hero-text-slider' // Link back to text slider
+          asNavFor: '.hero-text-slider',
+        });
+
+        // Scroll Throttling
+        let scrollThrottleTimeout = false;
+
+        $('.hero-slider-wrapper').on('wheel', function (e) {
+          e.preventDefault(); // Prevent default scroll behavior
+
+          if (!scrollThrottleTimeout) {
+            scrollThrottleTimeout = true;
+
+            if (e.originalEvent.deltaY < 0) {
+              // Scroll up
+              $('.hero-text-slider').slick('slickPrev');
+              animateArrow('.slick-prev'); // Animate the up arrow
+            } else {
+              // Scroll down
+              $('.hero-text-slider').slick('slickNext');
+              animateArrow('.slick-next'); // Animate the down arrow
+            }
+
+            // Set a delay before unlocking scrolling again
+            setTimeout(() => {
+              scrollThrottleTimeout = false;
+            }, 300); // Adjust delay as needed
+          }
+        });
+
+        // Function to animate arrows
+        function animateArrow(selector) {
+          const arrow = $(selector);
+          arrow.addClass('arrow-active'); // Add active class for animation
+          setTimeout(() => {
+            arrow.removeClass('arrow-active'); // Remove class after animation
+          }, 500); // Match animation duration (in milliseconds)
+        }
+      });
+
+      let scrollDebounce;
+      $('.hero-slider-wrapper').on('wheel', function (e) {
+        clearTimeout(scrollDebounce);
+        scrollDebounce = setTimeout(() => {
+          if (e.originalEvent.deltaY < 0) {
+            $('.hero-text-slider').slick('slickPrev');
+          } else {
+            $('.hero-text-slider').slick('slickNext');
+          }
+        }, 100); // Adjust debounce time as needed
+      });
+
+    </script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const cursor = document.getElementById('custom-cursor');
+
+        // Update cursor position
+        document.addEventListener('mousemove', (e) => {
+          cursor.style.top = `${e.clientY}px`;
+          cursor.style.left = `${e.clientX}px`;
         });
       });
+
     </script>
     <script>
       document.addEventListener('DOMContentLoaded', function () {
