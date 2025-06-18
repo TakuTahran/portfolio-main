@@ -4,13 +4,7 @@
     <title>Home</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <!--
-      Need a visual blank slate?
-      Remove all code in `styles.css`!
-    -->
-    <!-- Slick CSS -->
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.css"/>
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick-theme.css"/>    
+    
     <link rel="stylesheet" href="styles.css" />
     <script type="module" src="script.js"></script>
 
@@ -22,183 +16,72 @@
     />
 
   </head>
-  <body>
-    <main>
-      <div id="particle-container"></div>   
-      <div class="hero-slider-wrapper">
-        <!-- Text Slider -->
-        <div class="hero-text-slider">
-          <div class="hero">
-            <div class="text">
-              <span class="logo">TC</span>
-              <div class="content">
-                <h1 class="name">Tahran Chowdhury</h1>      
-                <h2>Montreal, Canada / +10 Years Experience / Designer @Valnet</h2>  
-                <a class="btn" href="/about.html">About Me</a>
-              </div>
-            </div>
-          </div>
-      
-          <div class="hero alt">
-            <div class="text">
-              <span class="logo">V</span>
-              <div class="content job">
-                <h1 class="company">Valnet Inc.</h1>
-                <p>Senior Designer</p>
-                <p class="date">June 2022 - Present</p>
-                <p class="company-desc">
-                  Valnet Inc. is a global digital publishing and media investment Company that owns and operates over 25 authoritative brands across diverse verticals, including entertainment, sports, technology, automotive, gaming, lifestyle and travel.
-                </p>
-                <p class="location">📍 Montréal, QC 🇨🇦</p>
-                <a class="btn" href="https://valnetinc.com/" target="_blank">valnetinc.com</a>
-                <a class="btn" href="/gms.html">Case Study</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="hero">
-            <div class="text">
-              <span class="logo">MA</span>
-              <div class="content job">
-                <h1 class="company">MatterAlpha</h1>
-                <p>Freelance Designer</p>
-                <p class="date">Present</p>
-                <p class="company-desc">
-                  MatterAlpha is a one stop shop for all the happenings of the home automation
-                </p>
-                <p class="location">📍 Remote</p>
-                <a class="btn" href="/matteralpha.html">Case Study</a>
-              </div>
-            </div>
-          </div>          
-      
-          <div class="hero alt">
-            <div class="text">
-              <span class="logo">U</span>
-              <div class="content job">
-                <h1 class="company">Ubiweb</h1>
-                <p>Web Designer / Front-End Developer</p>
-                <p class="date">September 2021 - June 2022</p>
-                <p class="company-desc">
-                  Ubiweb is all about giving Canadian small and medium-sized businesses the essentials to confidently take on the digital marketing world. We simplify the process, helping you boost your growth and make meaningful connections. 
-                </p>
-                <p class="location">📍 Brossard, QC 🇨🇦</p>
-                <a class="btn" href="https://www.ubiweb.ca/" target="_blank">ubiweb.ca</a>
-              </div>
-            </div>
-          </div>
-      
-          <div class="hero">
-            <div class="text">
-              <span class="logo">LNM</span>
-              <div class="content job">
-                <h1 class="company">LinkNow Media</h1>
-                <p>Web Designe Team Lead</p>
-                <p class="date">April 2018 - September 2021</p>
-                <p class="company-desc">
-                  LinkNow® is a web design and online marketing company based in Montreal. We’re a diverse group of designers, marketers, writers, and customer experience agents who are passionate about the impact great digital marketing can have on small businesses.
-                </p>
-                <p class="location">📍 Brossard, QC 🇨🇦</p>
-                <a class="btn" href="https://linknow.com/home/" target="_blank">linknow.com</a>
-              </div>
-            </div>
-          </div>          
-        </div>
-      
-        <!-- Image Slider -->
-        <div class="hero-image-slider">
-          <div class="image taku" style="background-color: #ddd;"> 
-          </div>
-          <div class="image valnet" style="background-color: #ccc;">
-          </div>          
-          <div class="image alpha" style="background-color: #ccc;">
-          </div>
-          <div class="image ubiweb" style="background-color: #ccc;">
-          </div>
-          <div class="image lnm" style="background-color: #bbb;">
-          </div>
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <div class="hero-text">
+          <span class="logo">TC</span>
+          <h1 class="name">Tahran Chowdhury</h1>
+          <h2 class="subtitle">Montreal, Canada / 10+ Years Experience</h2>
+          <p class="role">Designer @ Valnet</p>
+          <a class="btn" href="/about.html">About Me</a>
         </div>
       </div>
-
-    </main>
-    <!-- jQuery (required by Slick) -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <!-- Slick JS -->
-    <script src="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.min.js"></script>
-    <script>
-      $(document).ready(function () {
-        // Initialize Slick Carousel
-        $('.hero-text-slider').slick({
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          dots: false,
-          arrows: true,
-          fade: true,
-          speed: 1000, // Adjust slide transition speed
-          easing: 'ease-in-out', // Smoother animation
-          asNavFor: '.hero-image-slider',
-        });
-
-        $('.hero-image-slider').slick({
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          arrows: false,
-          dots: false,
-          vertical: true,
-          asNavFor: '.hero-text-slider',
-        });
-
-        // Scroll Throttling
-        let scrollThrottleTimeout = false;
-
-        $('.hero-slider-wrapper').on('wheel', function (e) {
-          e.preventDefault(); // Prevent default scroll behavior
-
-          if (!scrollThrottleTimeout) {
-            scrollThrottleTimeout = true;
-
-            if (e.originalEvent.deltaY < 0) {
-              // Scroll up
-              $('.hero-text-slider').slick('slickPrev');
-              animateArrow('.slick-prev'); // Animate the up arrow
-            } else {
-              // Scroll down
-              $('.hero-text-slider').slick('slickNext');
-              animateArrow('.slick-next'); // Animate the down arrow
-            }
-
-            // Set a delay before unlocking scrolling again
-            setTimeout(() => {
-              scrollThrottleTimeout = false;
-            }, 300); // Adjust delay as needed
-          }
-        });
-
-        // Function to animate arrows
-        function animateArrow(selector) {
-          const arrow = $(selector);
-          arrow.addClass('arrow-active'); // Add active class for animation
-          setTimeout(() => {
-            arrow.removeClass('arrow-active'); // Remove class after animation
-          }, 500); // Match animation duration (in milliseconds)
-        }
-      });
-
-      let scrollDebounce;
-      $('.hero-slider-wrapper').on('wheel', function (e) {
-        clearTimeout(scrollDebounce);
-        scrollDebounce = setTimeout(() => {
-          if (e.originalEvent.deltaY < 0) {
-            $('.hero-text-slider').slick('slickPrev');
-          } else {
-            $('.hero-text-slider').slick('slickNext');
-          }
-        }, 100); // Adjust debounce time as needed
-      });
-
-    </script>
-
- 
-    
-  </body>
+    </section>
+  
+    <!-- Experience Section -->
+    <section class="experience-section">
+      <div class="experience-card">
+        <span class="logo">V</span>
+        <div class="card-content">
+          <h2 class="company">Valnet Inc.</h2>
+          <p class="position">Senior Designer</p>
+          <p class="date">June 2022 – Present</p>
+          <p class="desc">Valnet Inc. is a global digital media company operating 25+ brands in entertainment, tech, and lifestyle.</p>
+          <p class="location">📍 Montréal, QC 🇨🇦</p>
+          <a class="btn" href="https://valnetinc.com/" target="_blank">valnetinc.com</a>
+          <a class="btn" href="/gms.html">Case Study</a>
+        </div>
+      </div>
+  
+      <div class="experience-card">
+        <span class="logo">MA</span>
+        <div class="card-content">
+          <h2 class="company">MatterAlpha</h2>
+          <p class="position">Freelance Designer</p>
+          <p class="date">Present</p>
+          <p class="desc">MatterAlpha is a one-stop shop for all the happenings of the home automation space.</p>
+          <p class="location">📍 Remote</p>
+          <a class="btn" href="/matteralpha.html">Case Study</a>
+        </div>
+      </div>
+  
+      <div class="experience-card">
+        <span class="logo">U</span>
+        <div class="card-content">
+          <h2 class="company">Ubiweb</h2>
+          <p class="position">Web Designer / Front-End Developer</p>
+          <p class="date">Sept 2021 – June 2022</p>
+          <p class="desc">Ubiweb provides Canadian SMBs with tools to succeed in digital marketing with simplicity and clarity.</p>
+          <p class="location">📍 Brossard, QC 🇨🇦</p>
+          <a class="btn" href="https://www.ubiweb.ca/" target="_blank">ubiweb.ca</a>
+        </div>
+      </div>
+  
+      <div class="experience-card">
+        <span class="logo">LNM</span>
+        <div class="card-content">
+          <h2 class="company">LinkNow Media</h2>
+          <p class="position">Web Design Team Lead</p>
+          <p class="date">April 2018 – Sept 2021</p>
+          <p class="desc">LinkNow is a Montreal-based digital agency helping small businesses grow online through smart web design and marketing.</p>
+          <p class="location">📍 Brossard, QC 🇨🇦</p>
+          <a class="btn" href="https://linknow.com/home/" target="_blank">linknow.com</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  
 </html>

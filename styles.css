@@ -1,281 +1,108 @@
-body {
-  margin: 0;
-  font-family: "Barlow Semi Condensed", serif;
-  color: #FFFFFF;
-  background-color: #111111;
-  cursor: none;
-
+/* Hero Section */
+.hero {
+  background: linear-gradient(120deg, #f5f5f5, #fff);
+  padding: 6rem 2rem;
+  text-align: center;
+  border-bottom: 1px solid #eee;
 }
 
-/* Custom cursor element */
-#custom-cursor {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 20px;
-  height: 20px;
-  background-color: transparent;
-  mix-blend-mode: difference; /* Inverts colors underneath */
-
-  border: 1px solid #f5f5f5;
-  border-radius: 50%;
-  pointer-events: none; /* Prevent interference with clicks */
-  transition: transform 0.1s ease; /* Smooth follow */
-  z-index: 9999; /* Ensure it's on top */
-  animation: pulse 1.5s infinite ease-in-out;
-
-}
-
-/* Pulse animation */
-@keyframes pulse {
-  0% {
-    transform: translate(-50%, -50%) scale(1);
-    opacity: 1;
-  }
-  50% {
-    transform: translate(-50%, -50%) scale(1.5);
-    opacity: 0.6;
-  }
-  100% {
-    transform: translate(-50%, -50%) scale(1);
-    opacity: 1;
-  }
-}
-
-
-
-/* Hover effect for interactive elements */
-button:hover #custom-cursor,
-a:hover #custom-cursor {
-  transform: scale(1.5); /* Enlarge cursor */
-  background-color: rgba(0, 255, 0, 0.8); /* Change color */
-}
-
-
-.hero-slider-wrapper {
-  display: flex;
-  align-items: center;
+.hero-content {
+  max-width: 800px;
   margin: 0 auto;
 }
 
-.hero-text-slider .hero.slick-slide {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  position: relative;
-}
-
-.hero {
-  padding: 20px;
-}
-.hero.alt {
-  /* background: #2e0101; */
-}
-
-.hero-text-slider ,
-.hero-image-slider {
-  width: 50%;
-  position: relative;
-}
-/* content slider */
-.logo {
-  font-size: 2rem;
+.hero .logo {
+  font-size: 3rem;
   font-weight: 700;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 99;
-  padding: 3rem;
-}
-.text {
-  padding-left: 6rem;
-  padding-right: 6rem;
-  border-left: 2px solid #FFFFFF;
-}
-h1.name {
-  font-size: 4vw;
-}
-.text h1,
-.text h2,
-.text h3,
-.text p {
-  margin: 0;
-}
-.content.job h1 {
-  font-size: 3vw;
-  margin-bottom: 1rem;
-}
-.content.job .date {
-  margin-bottom: 1rem;
-}
-.content.job .location {
-  margin-top: 1rem;
-}
-.btn {
-  background: #111111;
-  color: #FFF;
-  border: 1PX solid #fff;
-  font-size: 1rem;
-  border-radius: 50px;
-  padding: 0.5rem 1rem;
-  margin-top: 1.5rem;
-  display: inline-block;
-  text-decoration: none;
-  line-height: 1;
-}
-.btn:hover {
-  background: #FFF;
-  color: #111111;
-  border: 1PX solid #fff;  
-}
-/* image slider */
-.hero-image-slider .image.taku {
-  background-image: url(./imgs/taku.jpg);
-  height: 100vh;
-  background-position: center;
-  background-size: cover;  
-  filter: grayscale(100%);
-
-}
-.hero-image-slider .image.valnet {
-  background-image: url(/imgs/GMS.jpg);
-  height: 100vh;
-  background-position: right;
-  background-size: cover;  
-}
-.hero-image-slider .image.alpha {
-  background-image: url(/imgs/alpha.png);
-  height: 100vh;
-  background-position: right;
-  background-size: cover;  
-}
-.hero-image-slider .image.ubiweb {
-  background-image: url(/imgs/ubiweb.jpeg);
-  height: 100vh;
-  background-position: center;
-  background-size: cover  
-}
-.hero-image-slider .image.lnm {
-  background-image: url(/imgs/lnm.png);
-  background-color: #111111;
-}
-.hero-image-slider .image {
-  height: 100vh;
-  background-position: center;
-  background-size: cover;
-}
-/* slick btn stlyes */
-.slick-prev, .slick-next {
-  border: 1px solid aliceblue;
-  border-radius: 50%;
-  top: unset;
-  bottom: 40px;
-
-  width: 55px;
-  height: 55px;
-  z-index: 9;
-  cursor: none;
-}
-.slick-prev {
-  left: unset;
-  right: 100px;
-}
-.slick-next {
-  right: 20px;
-}
-.slick-prev:before, .slick-next:before {
-  font-family: 'RBCText';
-  
-}
-.slick-prev:hover, .slick-next:hover{
-  transform: scale(1.3) translateY(-40px); /* Scale up */
-
-}
-.case-study {
+  color: #333;
   display: block;
-  margin: 134px auto 4rem;
-  width: 100%;
-  max-width: 633px;
+  margin-bottom: 0.5rem;
 }
 
-.two-btn-wrapper {
-  display: flex;
-  justify-content: space-between;
-}
-/* General Table Styles */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 20px 0;
-  font-size: 16px;
-  text-align: left;
-  background-color: #121212; /* Dark background */
-  color: #ffffff; /* White text for contrast */
-}
-
-/* Table Header */
-thead th {
-  background-color: #1f1f1f; /* Slightly lighter than the table body */
-  color: #f5f5f5; /* Slight contrast for the header */
-  padding: 10px;
-  border-bottom: 2px solid #444444; /* Subtle separation */
+.name {
+  font-size: 2.5rem;
   font-weight: bold;
+  margin: 0.5rem 0;
 }
 
-/* Table Body */
-tbody td {
-  padding: 10px;
-  border-bottom: 1px solid #2e2e2e; /* Row separation */
+.subtitle {
+  font-size: 1.2rem;
+  color: #666;
+  margin: 0.25rem 0 0.75rem;
 }
 
-/* Zebra Striping */
-tbody tr {
-  background-color: #1f1e1e; /* Lighter background for odd rows */
-}
-tbody tr:nth-child(odd) {
-  background-color: #1a1a1a; /* Lighter background for odd rows */
-}
-
-/* Hover Effect */
-tbody tr:hover {
-  background-color: #333333; /* Slight highlight on hover */
+.role {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #444;
+  margin-bottom: 1.5rem;
 }
 
-
-/* a reset */
-
-a {
-  text-decoration: none; /* Removes underline */
-  color: inherit; /* Makes the link inherit text color from its parent */
-  cursor: none;
-}
-button {
-  cursor: none;
-}
-a:visited {
-  color: inherit; /* Ensures visited links inherit text color */
+/* Experience Cards */
+.experience-section {
+  max-width: 900px;
+  margin: 4rem auto;
+  padding: 0 2rem;
+  display: grid;
+  gap: 2rem;
 }
 
-a:hover,
-a:focus {
-  text-decoration: none; /* Prevent underline on hover/focus */
-  color: inherit; /* Keeps color consistent */
+.experience-card {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+  border: 1px solid #eee;
+  transition: box-shadow 0.3s ease;
 }
 
-a:active {
-  text-decoration: none; /* No underline on active state */
-  color: inherit;
-}
-a:hover #custom-cursor {
-  background-color: rgba(0, 0, 255, 0.8); /* Blue for links */
+.experience-card:hover {
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
 }
 
-/* Default arrow styles */
-.slick-arrow {
-  transition: transform 0.3s ease, color 0.3s ease;
+.experience-card .logo {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #777;
+  display: inline-block;
+  margin-bottom: 0.5rem;
 }
 
-/* Active arrow animation */
-.arrow-active {
-  transform: scale(1.3) translateY(-40px); /* Scale up */
+.card-content .company {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0.25rem 0;
+}
+
+.position {
+  font-weight: 500;
+  color: #444;
+}
+
+.date, .location {
+  font-size: 0.95rem;
+  color: #888;
+  margin: 0.25rem 0;
+}
+
+.desc {
+  margin: 1rem 0;
+  color: #555;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  margin: 0.3rem 0.5rem 0 0;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  background: #000;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 0.4rem;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background: #333;
 }
