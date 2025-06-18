@@ -1,7 +1,7 @@
 {
   "scripts": {
     "start": "servor --reload",
-    "build": "your build command here"
+    "build": "echo 'No build needed'"
   },
   "dependencies": {
     "servor": "^4.0.2"
