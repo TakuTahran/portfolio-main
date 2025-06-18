@@ -1,3 +1,16 @@
 <nav>
   <a href="/"><span class="logo">TC</span></a>
 </nav>
+<div id="custom-cursor"></div>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const cursor = document.getElementById('custom-cursor');
+
+    // Update cursor position
+    document.addEventListener('mousemove', (e) => {
+      cursor.style.top = `${e.clientY}px`;
+      cursor.style.left = `${e.clientX}px`;
+    });
+  });
+
+</script>    

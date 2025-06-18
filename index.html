@@ -24,7 +24,6 @@
   </head>
   <body>
     <main>
-      <div id="custom-cursor"></div>
       <div id="particle-container"></div>   
       <div class="hero-slider-wrapper">
         <!-- Text Slider -->
@@ -198,48 +197,8 @@
       });
 
     </script>
-    <script>
-      document.addEventListener('DOMContentLoaded', () => {
-        const cursor = document.getElementById('custom-cursor');
 
-        // Update cursor position
-        document.addEventListener('mousemove', (e) => {
-          cursor.style.top = `${e.clientY}px`;
-          cursor.style.left = `${e.clientX}px`;
-        });
-      });
-
-    </script>
-    <script>
-      document.addEventListener('DOMContentLoaded', function () {
-        function checkScreenSize() {
-          if (window.innerWidth < 1024) { // Adjust as needed
-            // Clear the existing content
-            document.body.innerHTML = '';
-
-            // Create a new warning message
-            const warningMessage = document.createElement('div');
-            warningMessage.style.cssText = `
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              height: 100vh;
-              text-align: center;
-              background-color: #000;
-              color: #fff;
-              font-family: Arial, sans-serif;
-            `;
-            warningMessage.innerHTML ="Are you really going to hire someone while browsing on your phone? I think not. <br><br>Come back on a desktop, and let's get serious.";
-            document.body.appendChild(warningMessage);
-          }
-        }
-
-        checkScreenSize();
-
-        // Re-check on window resize
-        window.addEventListener('resize', checkScreenSize);
-      });
-    </script>    
+ 
     
   </body>
 </html>
