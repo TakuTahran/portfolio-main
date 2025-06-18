@@ -19,10 +19,10 @@
     />
   </head>
   <body>
+    <div id="custom-cursor"></div>
+    <div id="particle-container"></div>     
     <div id="header"></div>
     <main>
-      <div id="custom-cursor"></div>
-      <div id="particle-container"></div>         
       <div class="content">
         <div class="case-study">
           <div class="item">
@@ -85,6 +85,6 @@
       fetch('header.html')
         .then((response) => response.text())
         .then((data) => (document.getElementById('header').innerHTML = data));
-    </script>
+    </script> 
   </body>
 </html>
