@@ -1,8 +1,9 @@
 {
+  "name": "my-static-site",
+  "version": "1.0.0",
+  "private": true,
   "scripts": {
-    "start": "servor --reload",
+    "build": "echo 'No build step needed'"
   },
-  "dependencies": {
-    "servor": "^4.0.2"
-  }
+  "dependencies": {}
 }
